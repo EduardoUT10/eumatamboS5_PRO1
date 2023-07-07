@@ -13,7 +13,7 @@ namespace eumatamboS5
 {
     public partial class MainPage : ContentPage
     {
-        public string Url = "http://172.16.6.32/ws_uisrael/post.php";
+        public string Url = "http://192.168.17.45/ws_uisrael/post.php";
         public HttpClient cliente = new HttpClient();
         private ObservableCollection<Estudiante> post;
         public MainPage()

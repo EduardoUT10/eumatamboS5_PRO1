@@ -34,11 +34,13 @@ namespace eumatamboS5
             parametros.Add("apellido", txtApellido.Text);
             parametros.Add("edad", txtEdad.Text);
 
-            cliente.UploadValues("http://172.16.6.32/ws_uisrael/post.php?codigo=" + txtCodigo.Text + "&nombre=" + txtNombre.Text + "&apellido=" + txtApellido.Text + "&edad=" + txtEdad.Text, "PUT", parametros);
+            cliente.UploadValues("http://192.168.17.45/ws_uisrael/post.php?codigo=" + txtCodigo.Text + "&nombre=" + txtNombre.Text + "&apellido=" + txtApellido.Text + "&edad=" + txtEdad.Text, "PUT", parametros);
 
-            DisplayAlert("ACTUALIZAR", "Dato actualizado con exito", "Cerrar");
+           // DisplayAlert("ACTUALIZAR", "Dato actualizado con exito", "Cerrar");
 
             Navigation.PushAsync(new MainPage());
+            var mensaje = "Elemento actualizados con exito";
+            DependencyService.Get<Mensaje>().longAlert(mensaje);
         }
 
         private void btnEliminar_Clicked(object sender, EventArgs e)
@@ -50,11 +52,13 @@ namespace eumatamboS5
             parametros.Add("apellido", txtApellido.Text);
             parametros.Add("edad", txtEdad.Text);
 
-            cliente.UploadValues("http://172.16.6.32/ws_uisrael/post.php?codigo=" + txtCodigo.Text, "DELETE", parametros);
+            cliente.UploadValues("http://192.168.17.45/ws_uisrael/post.php?codigo=" + txtCodigo.Text, "DELETE", parametros);
 
-            DisplayAlert("ELIMINAR", "Dato eliminado con exito", "Cerrar");
+           // DisplayAlert("ELIMINAR", "Dato eliminado con exito", "Cerrar");
 
             Navigation.PushAsync(new MainPage());
+            var mensaje = "Elemento eliminado con exito";
+            DependencyService.Get<Mensaje>().longAlert(mensaje);
         }
     }
 }
