@@ -30,6 +30,8 @@ namespace eumatamboS5
                 parametros.Add("edad", txtEdad.Text);
                 cliente.UploadValues("http://172.16.6.32/ws_uisrael/post.php", "POST", parametros);
                 Navigation.PushAsync(new MainPage());
+                var mensaje = "Elemento ingresado con exito";
+                DependencyService.Get<Mensaje>().longAlert(mensaje);
             }
             catch (Exception ex)
             {
@@ -37,7 +39,7 @@ namespace eumatamboS5
 
             }
         }
-
+        
         private void btnCancelar_Clicked(object sender, EventArgs e)
         {
 
