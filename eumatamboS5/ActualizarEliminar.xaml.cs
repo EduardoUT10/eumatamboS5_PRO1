@@ -39,7 +39,7 @@ namespace eumatamboS5
            // DisplayAlert("ACTUALIZAR", "Dato actualizado con exito", "Cerrar");
 
             Navigation.PushAsync(new MainPage());
-            var mensaje = "Elemento actualizado con exito";
+            var mensaje = "Elemento actualizados con exito";
             DependencyService.Get<Mensaje>().longAlert(mensaje);
         }
 
